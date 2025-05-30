@@ -2,7 +2,7 @@
 let inputDir= {x:0 ,y:0};
 let lastinpDir= inputDir;
 const Gameover= new Audio('Assests\gameend.mp3');
-const Gamebg= new Audio('CAssests\bgsnake.mp3');
+const Gamebg= new Audio('Assests\bgsnake.mp3');
 const eatfood= new Audio('Assests\eatfood.mp3');
 let speed= 8;
 let lastPaintTime= 0;
@@ -50,7 +50,7 @@ function gameEngine(){
         Gameover.play();
         Gamebg.pause();
         inputDir= {x:0,y:0};
-        alert("Game is over! Press any key to restart.");
+        alert("Game is over! Press OK to restart.");
         snakeArr= [{x:1, y:1}];
         score=0;
     }
