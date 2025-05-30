@@ -1,9 +1,9 @@
 //game constants & variables
 let inputDir= {x:0 ,y:0};
 let lastinpDir= inputDir;
-const Gameover= new Audio('Assests\gameend.mp3');
-const Gamebg= new Audio('Assests\bgsnake.mp3');
-const eatfood= new Audio('Assests\eatfood.mp3');
+const Gameover= new Audio('gameend.mp3');
+const Gamebg= new Audio('bgsnake.mp3');
+const eatfood= new Audio('eatfood.wav');
 let speed= 5;
 let lastPaintTime= 0;
 let score= 0;
@@ -53,6 +53,7 @@ function gameEngine(){
         alert("Game is over! Press OK to restart.");
         snakeArr= [{x:1, y:1}];
         score=0;
+        speed=5;
     }
     //clears screen and avoids duplication
     document.getElementById("gameboard").innerHTML="";
@@ -63,6 +64,7 @@ function gameEngine(){
         let b= 20;
         food= {x: Math.round(a+(b-a)* Math.random()), y:Math.round(a+(b-a)* Math.random())};
         score += 10;
+        speed+= 0.2;
         expandSnake();
         eatfood.play();
     }
@@ -111,32 +113,39 @@ function gameEngine(){
 //main logic of game
 window.requestAnimationFrame(main);
 window.addEventListener('keydown',e=> {
-    inputDir= {x: 0, y:1} //starts the game
+    //starts the game
     switch(e.key){
         case "ArrowUp":
             console.log("ArrowUp");
+            if(lastinpDir.y==1) break;
             inputDir.x= 0;
             inputDir.y= -1;
             break;
         
         case "ArrowDown":
             console.log("ArrowDown");
+            if(lastinpDir.y==-1) break;
             inputDir.x= 0;
             inputDir.y= 1;
             break;
         
         case "ArrowLeft":
             console.log("ArrowLeft");
+            if(lastinpDir.x==1) break;
             inputDir.x= -1;
             inputDir.y= 0;
             break;
         
         case "ArrowRight":
             console.log("ArrowRight");
+            if(lastinpDir.x==-1) break;
             inputDir.x= 1;
             inputDir.y= 0;
             break;
         default:
             break;
     }
+    lastinpDir= inputDir;
 });
+
+    

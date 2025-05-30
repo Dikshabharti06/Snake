@@ -21,7 +21,7 @@ display: grid;
 grid-template-columns: repeat(25,1fr);
 grid-template-rows: repeat(25,1fr);
 background-color: white;
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+box-shadow: 0 4px 8px 0 rgb(45, 67, 5), 0 6px 20px 0 rgb(45, 67, 5);
 }
 h2{
 background-color: darkgreen;
@@ -36,7 +36,7 @@ border-radius: 10px;
 .head{
     background: url("Assests/snakehead.jpg");
     background-size: 100% 100%;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 .snake{
     background-color: rgb(161, 248, 32);
@@ -45,5 +45,5 @@ border-radius: 10px;
 }
 #scorey{
     font-family: "Barriecito", system-ui;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgb(51, 75, 9), 0 6px 20px 0 rgb(45, 67, 5);
 }
